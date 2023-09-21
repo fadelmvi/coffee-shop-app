@@ -60,7 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -77,7 +77,7 @@ flutter:
   fonts:
     - family: Sora
       fonts:
-        - asset: fonts/Sora-Regular.ttf
+        - asset: assets/fonts/Sora-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
