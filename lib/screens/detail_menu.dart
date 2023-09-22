@@ -27,7 +27,9 @@ class DetailMenu extends StatelessWidget {
                     'Detail',
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                   ),
-                  const Icon(Icons.favorite_border)
+                  FavoriteButton(
+                    menu: menu,
+                  )
                 ],
               ),
             ),
@@ -63,7 +65,10 @@ class DetailMenu extends StatelessWidget {
               padding: EdgeInsets.only(top: 10, left: 30),
               child: Row(
                 children: [
-                  Icon(Icons.star, color: Colors.amber,),
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
                   Padding(
                     padding: EdgeInsets.only(left: 6),
                     child: Text(
@@ -111,5 +116,29 @@ class DetailMenu extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  final Menu menu;
+  const FavoriteButton({Key? key, required this.menu}) : super(key: key);
+
+  @override
+  _FavoriteButton createState() => _FavoriteButton();
+}
+
+class _FavoriteButton extends State<FavoriteButton> {
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        onPressed: () {
+          setState(() {
+            widget.menu.isFavorite = !widget.menu.isFavorite;
+          });
+        },
+        icon: Icon(
+          widget.menu.isFavorite ? Icons.favorite : Icons.favorite_border,
+          color: Colors.red,
+        ));
   }
 }
