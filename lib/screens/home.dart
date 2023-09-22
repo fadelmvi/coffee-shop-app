@@ -1,5 +1,6 @@
 import 'package:coffee_shop_app/models/keyword_menu.dart';
 import 'package:coffee_shop_app/models/menu.dart';
+import 'package:coffee_shop_app/screens/detail_menu.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -137,11 +138,13 @@ class MenuList extends StatelessWidget {
         menuList.map(
           (menu) {
             return InkWell(
-              // onTap: () {
-              //   Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //     return MenuDetail();
-              //   }));
-              // },
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DetailMenu(
+                    menu: menu,
+                  );
+                }));
+              },
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
