@@ -10,6 +10,7 @@ class DetailMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+          child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -114,7 +115,7 @@ class DetailMenu extends StatelessWidget {
             )
           ],
         ),
-      ),
+      )),
     );
   }
 }

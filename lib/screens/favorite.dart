@@ -10,7 +10,7 @@ class Favorite extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           child: GridView.count(
             crossAxisCount: 2,
             mainAxisSpacing: 10.0,
@@ -20,12 +20,16 @@ class Favorite extends StatelessWidget {
               (menu) {
                 return InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return DetailMenu(
-                        menu: menu,
-                      );
-                    }));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return DetailMenu(
+                            menu: menu,
+                          );
+                        },
+                      ),
+                    );
                   },
                   child: Card(
                     shape: RoundedRectangleBorder(

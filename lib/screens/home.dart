@@ -153,8 +153,8 @@ class MenuList extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   child: Column(
                     children: [
-                      Expanded(
-                        flex: 3,
+                      Flexible(
+                        flex: 2,
                         child: Container(
                           // height: 500,
                           padding: EdgeInsets.all(5),
@@ -165,7 +165,7 @@ class MenuList extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Expanded(
+                      Flexible(
                         flex: 1,
                         child: Container(
                           padding: EdgeInsets.symmetric(horizontal: 10),
@@ -191,38 +191,37 @@ class MenuList extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Expanded(
+                      Flexible(
                         flex: 1,
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                menu.price,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                    color: Color(0xFF2F4B4E)),
+                              Flexible(
+                                flex: 2,
+                                child: Text(
+                                  menu.price,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                      color: Color(0xFF2F4B4E)),
+                                ),
                               ),
-                              ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all(
-                                      const Color(0xFFC67C4E)),
-                                  minimumSize: MaterialStateProperty.all(
-                                    const Size(32, 32),
-                                  ),
-                                  shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
+                              Ink(
+                                width: 30,
+                                height: 30,
+                                decoration: ShapeDecoration(
+                                  color: Color(0xFFC67C4E),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
                                 ),
-                                onPressed: () {},
-                                child: const Text(
-                                  '+',
-                                  style: TextStyle(fontSize: 16),
+                                child: IconButton(
+                                  icon: Icon(Icons.add),
+                                  color: Colors.white,
+                                  iconSize: 12,
+                                  onPressed: () {},
                                 ),
                               ),
                             ],
